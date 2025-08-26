@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 1 Month Anniversary ❤️</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 30px;
+      color: #fff;
+      display: none; /* hidden until password entered */
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      animation: glow 2s infinite alternate;
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff; }
+      to { text-shadow: 0 0 20px #ff4da6; }
+    }
+    #lockscreen {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+    }
+    #lockscreen input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 15px;
+      font-size: 1em;
+      text-align: center;
+    }
+    #lockscreen button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4da6;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .section {
+      margin: 50px 0;
+    }
+    .love-letter {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6em;
+      color: #fff;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 15px;
+    }
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 15px;
+      border: 3px solid #fff;
+    }
+    .coupon {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 1.5em;
+      font-weight: bold;
+      width: 300px;
+      margin: auto;
+    }
+    .game {
+      margin: 30px 0;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(0,0,0,0.3);
+    }
+    button.option {
+      display: block;
+      margin: 8px auto;
+      padding: 8px 15px;
+      background: #ff4da6;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>💞 Happy 1 Month, My Love 💞</h1>
+  <p>Enjoy this little surprise with music, games & love notes ✨</p>
+
+  <!-- Love Letter -->
+  <div class="section love-letter">
+    My love,  
+    From the moment we started this journey, every day has felt magical. You make me laugh harder, love deeper, and dream bigger. I cherish your smile, your little habits, and the way you make even the simplest moments feel special. This first month with you has been the best chapter of my life, and I know this is only the beginning of a beautiful story we’ll write together.  
+    Thank you for choosing me, for being patient, for caring endlessly. I promise to always stand by you, to support you, and to love you more each day. Here’s to many more months and years of us 💕  
+  </div>
+
+  <!-- Games -->
+  <div class="section game">
+    <h2>🎮 Game 1: How Well Do We Know Us?</h2>
+    <p>What was our first inside joke?</p>
+    <button class="option" onclick="alert('Haha yes! You remembered ❤️')">Shutup pt2</button>
+    <button class="option" onclick="alert('Nope 😂 Try again!')">Ice cream fights</button>
+    <button class="option" onclick="alert('Nope 😂 Try again!')">Random song lyrics</button>
+  </div>
+
+  <div class="section game">
+    <h2>🤣 Game 2: Funny Quiz</h2>
+    <p>If I was a food, what would I be?</p>
+    <button class="option" onclick="alert('Yess, your cutie samosa ❤️')">Samosa</button>
+    <button class="option" onclick="alert('Lol 😂 close enough')">Gol gappa</button>
+    <button class="option" onclick="alert('Bruhh no way 😂')">Plain bread</button>
+  </div>
+
+  <div class="section game">
+    <h2>🖼️ Game 3: Image Memory</h2>
+    <p>(Imagine us playing memory with these pictures 💕)</p>
+    <div class="gallery">
+      <img src="img1.jpg">
+      <img src="img2.jpg">
+      <img src="img3.jpg">
+      <img src="img4.jpg">
+      <img src="img5.jpg">
+      <img src="img6.jpg">
+      <img src="img7.jpg">
+      <img src="img8.jpg">
+      <img src="img9.jpg">
+      <img src="img10.jpg">
+    </div>
+  </div>
+
+  <!-- Coupon -->
+  <div class="section coupon">
+    🎟️ Free Coupon <br>
+    Redeemable for: <br>
+    Unlimited Hugs & Kisses ❤️
+  </div>
+
+  <script>
+    // PASSWORD LOCK
+    const password = "shutuppt2";
+    const lockscreen = document.createElement("div");
+    lockscreen.id = "lockscreen";
+    lockscreen.innerHTML = `
+      <h2>🔒 Enter Password to Unlock</h2>
+      <input type="password" id="passInput" placeholder="Enter code">
+      <button onclick="checkPass()">Unlock</button>
+    `;
+    document.body.before(lockscreen);
+
+    function checkPass() {
+      const input = document.getElementById("passInput").value;
+      if (input === password) {
+        lockscreen.style.display = "none";
+        document.body.style.display = "block";
+        playSong(0);
+      } else {
+        alert("Wrong password! Try again.");
+      }
+    }
+
+    // PLAYLIST
+    const playlist = [
+      { file: "kkhh_instrumental.mp3", start: 0, duration: 60 }, 
+      { file: "tu_pehla_pyaar.mp3", start: 0, duration: 120 },
+      { file: "tu_aadatein.mp3", start: 0, duration: 120 },
+      { file: "rang_sharbaton_ka.mp3", start: 0, duration: 120 },
+      { file: "tu_chahiye.mp3", start: 0, duration: 120 },
+      { file: "dil_nu.mp3", start: 0, duration: 9999 }
+    ];
+
+    let audio = new Audio();
+    function playSong(i) {
+      if (i >= playlist.length) return;
+      const song = playlist[i];
+      audio.src = song.file;
+      audio.currentTime = song.start;
+      audio.play();
+      setTimeout(() => {
+        audio.pause();
+        playSong(i + 1);
+      }, song.duration * 1000);
+    }
+  </script>
+</body>
+</html>
+
